@@ -1,0 +1,84 @@
+# Environment / secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+
+# Python
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+env/
+
+# Node
+node_modules/
+**/node_modules/
+.npm/
+.yarn/
+.pnpm-store/
+*.log
+
+# Framework build outputs
+.next/
+.nuxt/
+dist/
+build/
+out/
+.cache/
+.vite/
+.expo/
+.expo-shared/
+.metro-health-check*
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.gradle/
+*.class
+*.jar
+*.war
+*.apk
+*.aab
+captures/
+
+# Native / compiled artifacts
+*.o
+*.obj
+*.so
+*.dll
+*.exe
+*.out
+
+# Rust / Go
+/target/
+/vendor/
+
+# IDE / OS
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.bak
+*.swp
