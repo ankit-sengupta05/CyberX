@@ -26,11 +26,12 @@ Based on the ColPali-Core Cybersecurity Dataset Factory PRD, the system leverage
 
 ## 🖥️ Hardware & Execution
 
-| Component | Specification              | Details                                                            |
-| --------- | -------------------------- | ------------------------------------------------------------------ |
-| **GPU**   | NVIDIA RTX 5060 (8GB VRAM) | Primary inference device. Strict model loading/unloading required. |
-| **CPU**   | Intel i7-14700HX           | Used for fallback operations (OCR, preprocessing).                 |
-| **OS**    | Windows / Linux            | Fully local environment with no cloud dependencies.                |
+| Component       | Specification              | Details                                                            |
+| --------------- | -------------------------- | ------------------------------------------------------------------ |
+| **GPU**         | NVIDIA RTX 5060 (8GB VRAM) | Primary inference device. Strict model loading/unloading required. |
+| **CPU**         | Intel i7-14700HX           | Used for fallback operations (OCR, preprocessing).                 |
+| **OS**          | Windows / Linux            | Fully local environment with no cloud dependencies.                |
+| **Permissions** | Super User / Root          | The integrated OS agent runs with full super user privileges.      |
 
 ## 🛡️ Code Quality Pipeline
 

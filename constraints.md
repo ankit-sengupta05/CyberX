@@ -25,3 +25,7 @@ The Cybersecurity Dataset Factory must strictly adhere to the following constrai
 - **Visual Grounding**: Examples generated from layout-heavy pages must be verified by comparing the LLM's claims against the ColPali embedding of the source page.
 - **Deduplication**: Must prevent redundant training examples across editions/reprints. Deduplication requires exact hashing, semantic clustering, AND ColPali visual embeddings to catch layout near-duplicates.
 - **Decision Over Memorization**: The pipeline focuses on _decision-making and tool/technique selection_, not simple memorization of shell commands.
+
+## 👑 5. Agent Permissions
+
+- **Super User Access**: The AI agent integrated into the operating system is granted full super user (root) access. This allows it to seamlessly manage files, execute system commands, and orchestrate the pipeline without permission bottlenecks.
