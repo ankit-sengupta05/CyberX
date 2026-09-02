@@ -26,9 +26,9 @@ from requests.exceptions import ConnectionError, Timeout, ChunkedEncodingError
 MODEL_NAME = "Qwen/Qwen2.5-Coder-7B"
 SAVE_DIR = r"C:\SDE Projects\CyberHackerOS\root_llm"
 
-MAX_RETRIES = 100          # network can drop many times over a large download
-RETRY_WAIT_SECONDS = 20    # base backoff
-MAX_WORKERS = 4            # parallel file downloads; drop to 1 on very flaky links
+MAX_RETRIES = 100  # network can drop many times over a large download
+RETRY_WAIT_SECONDS = 20  # base backoff
+MAX_WORKERS = 4  # parallel file downloads; drop to 1 on very flaky links
 
 # Optional: fine-tuning usually doesn't need every file in the repo.
 # Uncomment to skip .bin duplicates if the repo ships both .bin and .safetensors,
@@ -98,7 +98,9 @@ def verify(save_dir: str) -> None:
     # Check for any .incomplete leftovers, which mean a file is still partial
     incomplete = [f for f in local_files if f.suffix == ".incomplete"]
     if incomplete:
-        print(f"\n{len(incomplete)} file(s) still incomplete — rerun the script to finish them:")
+        print(
+            f"\n{len(incomplete)} file(s) still incomplete — rerun the script to finish them:"
+        )
         for f in incomplete:
             print(f"  - {f.name}")
 

@@ -21,6 +21,13 @@ repos:
       - id: codespell
         args: ["--skip=*.lock,*.min.js,*.map"]
 
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.6.3
+    hooks:
+      - id: ruff
+        args: [ --fix ]
+      - id: ruff-format
+
   - repo: local
     hooks:
       - id: repo-secret-scan

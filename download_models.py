@@ -34,17 +34,17 @@ log = logging.getLogger(__name__)
 # Set your root here. Use an absolute path so this works regardless of
 # which directory you run the script from.
 # ---------------------------------------------------------------------------
-ROOT = Path(r"C:\llms")          # Windows example
+ROOT = Path(r"C:\llms")  # Windows example
 # ROOT = Path("/home/you/llms")  # Linux example
 
 MODELS_TO_DOWNLOAD = [
-    "vidore/colqwen2-v1.0",              # visual page embedder
-    "Qwen/Qwen2.5-Coder-7B-Instruct",    # fine-tuning base — coder variant, better tool/command fidelity
+    "vidore/colqwen2-v1.0",  # visual page embedder
+    "Qwen/Qwen2.5-Coder-7B-Instruct",  # fine-tuning base — coder variant, better tool/command fidelity
     # add more repo ids here
 ]
 
 MAX_RETRIES = 8
-BASE_BACKOFF_SECONDS = 10   # doubles each retry: 10, 20, 40, 80... capped below
+BASE_BACKOFF_SECONDS = 10  # doubles each retry: 10, 20, 40, 80... capped below
 MAX_BACKOFF_SECONDS = 300
 
 # hf_transfer gives much faster, more reliable multi-threaded downloads with
@@ -56,7 +56,7 @@ RETRYABLE_EXCEPTIONS = (
     ConnectionError,
     ChunkedEncodingError,
     Timeout,
-    HfHubHTTPError,   # covers transient 5xx / rate-limit responses from the Hub
+    HfHubHTTPError,  # covers transient 5xx / rate-limit responses from the Hub
 )
 
 
@@ -87,8 +87,8 @@ def download_model(repo_id: str) -> Path:
             snapshot_download(
                 repo_id=repo_id,
                 local_dir=target_dir,
-                local_dir_use_symlinks=False,   # real files, not symlinks into the HF cache
-                max_workers=4,                  # parallel file downloads within the repo
+                local_dir_use_symlinks=False,  # real files, not symlinks into the HF cache
+                max_workers=4,  # parallel file downloads within the repo
                 # revision="main",               # pin a specific commit/tag for reproducibility
                 # token="hf_...",                # only needed for gated models
             )
@@ -99,8 +99,12 @@ def download_model(repo_id: str) -> Path:
             if attempt >= MAX_RETRIES:
                 log.error(f"Giving up on {repo_id} after {attempt} attempts: {e}")
                 raise
-            backoff = min(BASE_BACKOFF_SECONDS * (2 ** (attempt - 1)), MAX_BACKOFF_SECONDS)
-            log.warning(f"{repo_id}: transient error ({e!r}). Retrying in {backoff}s...")
+            backoff = min(
+                BASE_BACKOFF_SECONDS * (2 ** (attempt - 1)), MAX_BACKOFF_SECONDS
+            )
+            log.warning(
+                f"{repo_id}: transient error ({e!r}). Retrying in {backoff}s..."
+            )
             time.sleep(backoff)
 
         except KeyboardInterrupt:
