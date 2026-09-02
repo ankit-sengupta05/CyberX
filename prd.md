@@ -22,7 +22,7 @@ The system must preserve the relationship between:
 
 The primary purpose of fine-tuning is **decision-making and tool/technique selection**, not simple memorization of commands.
 
-Many source books encode meaning in the *spatial relationship* between diagrams, tables, captions, and body text (e.g., a network topology diagram annotated with attack paths, a permissions table with footnoted exceptions, a multi-column layout where a screenshot is explained two columns away). Flattening pages to linear text loses this. The system is therefore designed so that **every page is treated as a visual object first, a text object second** — text extraction and visual (ColPali) indexing run as parallel, independent paths off the same page render, not a sequential fallback.
+Many source books encode meaning in the _spatial relationship_ between diagrams, tables, captions, and body text (e.g., a network topology diagram annotated with attack paths, a permissions table with footnoted exceptions, a multi-column layout where a screenshot is explained two columns away). Flattening pages to linear text loses this. The system is therefore designed so that **every page is treated as a visual object first, a text object second** — text extraction and visual (ColPali) indexing run as parallel, independent paths off the same page render, not a sequential fallback.
 
 The system must be designed for **authorized cybersecurity education, CTFs, labs, defensive research, and systems the user has permission to test**.
 
@@ -131,12 +131,12 @@ ColPali is not bolted onto the RAG step at the end — it is generated during in
 
 Primary target:
 
-* NVIDIA RTX 5060
-* 8 GB VRAM
-* Intel i7-14700HX
-* Local Windows/Linux environment
-* No mandatory cloud APIs
-* Models should be locally downloadable/open-weight where licensing permits.
+- NVIDIA RTX 5060
+- 8 GB VRAM
+- Intel i7-14700HX
+- Local Windows/Linux environment
+- No mandatory cloud APIs
+- Models should be locally downloadable/open-weight where licensing permits.
 
 The system must gracefully fall back to CPU for tasks that cannot fit into VRAM.
 
@@ -150,12 +150,12 @@ The system must gracefully fall back to CPU for tasks that cannot fit into VRAM.
 
 The system shall accept:
 
-* PDF
-* EPUB where supported
-* scanned PDFs
-* image-heavy PDFs
-* textbook chapters
-* supplementary documents
+- PDF
+- EPUB where supported
+- scanned PDFs
+- image-heavy PDFs
+- textbook chapters
+- supplementary documents
 
 Each document must receive a unique:
 
@@ -238,12 +238,12 @@ It must preserve document relationships both structurally (via layout-detection 
 
 Recommended implementation:
 
-* Docling
-* PDF extraction libraries
-* OCR fallback
-* layout detection
-* ColPali / ColQwen2 for holistic page representation
-* local vision model (VLM) for pages flagged high-layout-significance
+- Docling
+- PDF extraction libraries
+- OCR fallback
+- layout detection
+- ColPali / ColQwen2 for holistic page representation
+- local vision model (VLM) for pages flagged high-layout-significance
 
 ---
 
@@ -364,14 +364,14 @@ Equations should retain:
 
 Detect:
 
-* shell commands
-* PowerShell
-* Python
-* JavaScript
-* SQL
-* configuration snippets
-* tool output
-* command-line examples
+- shell commands
+- PowerShell
+- Python
+- JavaScript
+- SQL
+- configuration snippets
+- tool output
+- command-line examples
 
 Store separately:
 
@@ -428,11 +428,11 @@ Layout-significance scoring
 
 Recommended heuristics for `layout_significance`:
 
-* ratio of detected image/table bounding-box area to total page area
-* presence of multi-column layout
-* OCR confidence (low confidence → higher significance, since text extraction is less trustworthy)
-* number of distinct layout blocks detected
-* optionally, a cheap classifier trained on a small labeled sample of "text-heavy" vs "diagram/table-heavy" pages
+- ratio of detected image/table bounding-box area to total page area
+- presence of multi-column layout
+- OCR confidence (low confidence → higher significance, since text extraction is less trustworthy)
+- number of distinct layout blocks detected
+- optionally, a cheap classifier trained on a small labeled sample of "text-heavy" vs "diagram/table-heavy" pages
 
 High-significance pages are the ones where ColPali-based retrieval and VLM-based extraction matter most — this routing keeps the (expensive) VLM path reserved for pages that actually need it, protecting the 8 GB VRAM budget.
 
@@ -484,9 +484,9 @@ visual_index/
 
 ColPali-family models produce a **multi-vector** representation — one embedding vector per image patch (typically on the order of ~1000 patches × 128 dimensions per page), not a single pooled vector per page. At the scale of hundreds of thousands of pages this is storage-heavy. Requirements:
 
-* Use **Qdrant's native multi-vector field type** with MaxSim (late-interaction) scoring as the comparator.
-* Apply **binary quantization** to the patch vectors from day one — this is a well-supported Qdrant feature for ColPali-style embeddings and typically reduces storage by roughly an order of magnitude with acceptable recall loss. This should not be treated as a later optimization; budget for it in the initial schema.
-* Retain a reference (`page_image_path`) alongside each embedding so retrieval results can be rendered back to the original page image for VLM re-reading or human review.
+- Use **Qdrant's native multi-vector field type** with MaxSim (late-interaction) scoring as the comparator.
+- Apply **binary quantization** to the patch vectors from day one — this is a well-supported Qdrant feature for ColPali-style embeddings and typically reduces storage by roughly an order of magnitude with acceptable recall loss. This should not be treated as a later optimization; budget for it in the initial schema.
+- Retain a reference (`page_image_path`) alongside each embedding so retrieval results can be rendered back to the original page image for VLM re-reading or human review.
 
 ### 15.3 Indexing schedule
 
@@ -764,11 +764,11 @@ duplication_score
 
 Use:
 
-* exact hashing
-* normalized text comparison
-* embedding similarity (text)
-* semantic clustering
-* **ColPali embedding similarity across pages** — catches near-identical page layouts across different editions, reprints, or duplicated appendices of the same book, which text-only deduplication can miss when OCR output differs slightly between copies
+- exact hashing
+- normalized text comparison
+- embedding similarity (text)
+- semantic clustering
+- **ColPali embedding similarity across pages** — catches near-identical page layouts across different editions, reprints, or duplicated appendices of the same book, which text-only deduplication can miss when OCR output differs slightly between copies
 
 Do not allow hundreds of essentially identical questions, and do not allow the same underlying diagram/table (re-printed across editions) to generate redundant training examples under different surface text.
 
@@ -1041,15 +1041,15 @@ evaluation/
 
 Metrics should include:
 
-* correct technique
-* correct tool category
-* constraint compliance
-* correct rejection of inappropriate tools
-* output interpretation
-* next-action accuracy
-* hallucination rate
-* source grounding
-* **visual grounding accuracy** — for multimodal/high-layout-significance examples, whether the model's stated reasoning is actually consistent with what's depicted in the source page image
+- correct technique
+- correct tool category
+- constraint compliance
+- correct rejection of inappropriate tools
+- output interpretation
+- next-action accuracy
+- hallucination rate
+- source grounding
+- **visual grounding accuracy** — for multimodal/high-layout-significance examples, whether the model's stated reasoning is actually consistent with what's depicted in the source page image
 
 ---
 
@@ -1244,11 +1244,11 @@ This is essential when working with thousands of pages and local GPU inference �
 
 Every expensive operation must be cached, including:
 
-* rendered page images (keyed by `page_hash`)
-* ColPali/ColQwen2 embeddings (keyed by `page_hash` + `colpali_model_version`)
-* OCR output
-* knowledge atoms
-* generated scenarios/trajectories
+- rendered page images (keyed by `page_hash`)
+- ColPali/ColQwen2 embeddings (keyed by `page_hash` + `colpali_model_version`)
+- OCR output
+- knowledge atoms
+- generated scenarios/trajectories
 
 A change to the ColPali model version should invalidate only the visual-index cache, not the entire pipeline — text extraction, knowledge atoms, and generated examples remain valid and reusable.
 
@@ -1415,12 +1415,12 @@ Your long-term pipeline should therefore preserve the full relationship:
 
 That structure lets you later train:
 
-* a standard SFT model,
-* a tool-use model,
-* an agent,
-* a multimodal model,
-* a preference/DPO model,
-* or a completely different LLM,
+- a standard SFT model,
+- a tool-use model,
+- an agent,
+- a multimodal model,
+- a preference/DPO model,
+- or a completely different LLM,
 
 without going back and reprocessing all your books — and without re-rendering pages or re-running OCR, since the visual index and page images are retained as permanent, model-independent artifacts.
 

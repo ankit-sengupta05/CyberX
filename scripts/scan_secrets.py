@@ -71,7 +71,7 @@ def scan_file(path: str):
     try:
         with open(path, "r", encoding="utf-8", errors="ignore") as handle:
             content = handle.read()
-    except Exception:
+    except Exception:  # noqa: BLE001
         return findings
 
     for pattern, name in PATTERNS:

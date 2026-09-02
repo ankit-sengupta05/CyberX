@@ -20,7 +20,7 @@ from pathlib import Path
 
 from huggingface_hub import snapshot_download
 from huggingface_hub.utils import HfHubHTTPError
-from requests.exceptions import ConnectionError, Timeout, ChunkedEncodingError
+from requests.exceptions import ChunkedEncodingError, ConnectionError, Timeout
 
 # ========== CONFIG ==========
 MODEL_NAME = "Qwen/Qwen2.5-Coder-7B"
@@ -71,7 +71,7 @@ def download_with_resume() -> bool:
             print(f"Retrying in {wait}s...")
             time.sleep(wait)
 
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001
             # Catch-all so a weird transient error doesn't kill the whole run
             attempt += 1
             print(f"[UNEXPECTED ERROR] attempt {attempt}/{MAX_RETRIES}: {e}")
@@ -82,9 +82,9 @@ def download_with_resume() -> bool:
 
 
 def verify(save_dir: str) -> None:
-    print(f"\n{'='*60}")
+    print(f"\n{'=' * 60}")
     print("Verifying local files...")
-    print(f"{'='*60}")
+    print(f"{'=' * 60}")
     local_files = [f for f in Path(save_dir).rglob("*") if f.is_file()]
     total_size = sum(f.stat().st_size for f in local_files) / (1024**3)
     print(f"Files in {save_dir}: {len(local_files)}")

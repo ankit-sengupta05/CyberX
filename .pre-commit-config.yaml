@@ -19,17 +19,41 @@ repos:
     rev: v2.4.3
     hooks:
       - id: codespell
-        args: ["--skip=*.lock,*.min.js,*.map"]
+        args: ["--skip=*.lock,*.min.js,*.map,pmd-ruleset.xml"]
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.6.3
+    rev: v0.16.5
     hooks:
       - id: ruff
         args: [ --fix ]
       - id: ruff-format
 
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v4.0.0-alpha.8
+    hooks:
+      - id: prettier
+        types_or: [javascript, jsx, ts, tsx, css, scss, html, markdown, json]
+
+  - repo: https://github.com/pre-commit/mirrors-eslint
+    rev: v10.9.1
+    hooks:
+      - id: eslint
+        types_or: [javascript, jsx, ts, tsx]
+        additional_dependencies: [eslint@8.56.0]
+
+  - repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
+    rev: v2.16.0
+    hooks:
+      - id: pretty-format-java
+        args: [--autofix]
+
   - repo: local
     hooks:
+      - id: pmd-check
+        name: PMD Anti-Bloat Check
+        entry: pmd check -R pmd-ruleset.xml
+        language: system
+        types: [java]
       - id: repo-secret-scan
         name: repo-secret-scan
         entry: python scripts/scan_secrets.py

@@ -18,14 +18,14 @@ Requires:
     pip install huggingface_hub
 """
 
+import logging
 import os
 import time
-import logging
 from pathlib import Path
 
 from huggingface_hub import snapshot_download
 from huggingface_hub.utils import HfHubHTTPError
-from requests.exceptions import ConnectionError, ChunkedEncodingError, Timeout
+from requests.exceptions import ChunkedEncodingError, ConnectionError, Timeout
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s  %(message)s")
 log = logging.getLogger(__name__)
@@ -121,7 +121,7 @@ if __name__ == "__main__":
     for repo_id in MODELS_TO_DOWNLOAD:
         try:
             download_model(repo_id)
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001
             log.error(f"Failed permanently: {repo_id} — {e}")
             failed.append(repo_id)
 
