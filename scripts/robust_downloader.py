@@ -61,6 +61,12 @@ def download_file_robustly(
             with requests.get(
                 url, headers=headers, stream=True, allow_redirects=True, timeout=30
             ) as r:
+                if r.status_code == 416:
+                    print(
+                        f"[OK] {filename} is already fully downloaded (416 Range Not Satisfiable)."
+                    )
+                    return True
+
                 # If server ignores Range request, it returns 200 instead of 206
                 if local_size > 0 and r.status_code == 200:
                     print(

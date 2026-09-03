@@ -15,6 +15,8 @@ Build a **fully local, automated cybersecurity knowledge and training-data facto
 4. A reusable **future-model adapter pipeline**.
 5. A high-quality **evaluation/benchmark dataset**.
 6. A **layout-aware visual retrieval index** (ColPali/ColQwen2), treated as core infrastructure rather than an optional add-on.
+7. **Agentic systems, tool calls, and pipelines** created with LangGraph, LangChain, etc., integrated into the OS with strict guardrails.
+8. A custom **AI Operating System** based on the latest **Kali Linux**, featuring a modified boot screen, minor UI/UX refinements, and native integration of agentic tool calls as core OS services.
 
 The system must preserve the relationship between:
 
@@ -1417,7 +1419,7 @@ That structure lets you later train:
 
 - a standard SFT model,
 - a tool-use model,
-- an agent,
+- an agent (where agentic systems, tool calls, and pipelines are built with LangGraph, LangChain, etc., and integrated into the OS with strict guardrails),
 - a multimodal model,
 - a preference/DPO model,
 - or a completely different LLM,

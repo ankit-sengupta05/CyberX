@@ -15,7 +15,11 @@ MODELS_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "models"))
 MODELS_TO_DOWNLOAD = [
     {
         "repo_id": "vidore/colqwen2-v1.0",
-        "description": "Visual Indexing Model (ColPali/ColQwen2)",
+        "description": "Visual Indexing Model (ColPali/ColQwen2) - Adapter only",
+    },
+    {
+        "repo_id": "Qwen/Qwen2-VL-2B-Instruct",
+        "description": "Visual Indexing Base Model (Required by ColQwen2)",
     },
     {
         "repo_id": "Qwen/Qwen2.5-7B-Instruct",
@@ -24,6 +28,10 @@ MODELS_TO_DOWNLOAD = [
     {
         "repo_id": "Qwen/Qwen2.5-VL-7B-Instruct",
         "description": "Primary VLM (Full-Page Extraction & Routing)",
+    },
+    {
+        "repo_id": "baidu/Unlimited-OCR",
+        "description": "Unlimited-OCR for infinite length document parsing",
     },
 ]
 

@@ -19,16 +19,18 @@ The **CyberX Dataset Factory** (ColPali-Core Edition) ingests a massive collecti
 
 Unlike standard RAG systems that flatten PDFs into linear text, CyberX treats every page as a **visual object first**. It preserves the crucial spatial relationships between diagrams, tables, and text using **ColPali/ColQwen2** embeddings and full-page VLM extraction.
 
+Additionally, this project serves as the foundation for an **AI-powered Operating System**, built on top of the latest **Kali Linux** as the base OS. The custom OS features a modified boot screen, refined UI/UX, and deep native integration of our agentic tool calls.
+
 ## ✨ Core Features
 
-| Feature                      | Description                                                                                                    |
-| :--------------------------- | :------------------------------------------------------------------------------------------------------------- |
-| 👁️ **Visual-First Pipeline** | Parses every page natively as an image. Uses ColPali to generate layout-aware multi-vector embeddings.         |
-| 🤖 **Model-Agnostic Output** | Generates a canonical dataset. Adapters translate this to specific formats (Qwen2.5, Llama, Gemma).            |
-| 🔀 **Decision-Making Focus** | Generates branching trajectories, constraint-aware scenarios, and negative examples for tool selection.        |
-| 🧠 **Intelligent Routing**   | Dynamically routes pages to standard OCR or full-page VLM extraction based on layout significance.             |
-| 🛡️ **Fully Local & Private** | Requires zero cloud APIs. Optimized to run locally on consumer hardware (e.g., RTX 5060 8GB VRAM).             |
-| 👑 **Super User Agent**      | The integrated AI agent operates with OS-level super user (root) access for unconstrained pipeline management. |
+| Feature                      | Description                                                                                                                                                                                                                                                          |
+| :--------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 👁️ **Visual-First Pipeline** | Parses every page natively as an image. Uses ColPali to generate layout-aware multi-vector embeddings.                                                                                                                                                               |
+| 🤖 **Model-Agnostic Output** | Generates a canonical dataset. Adapters translate this to specific formats (Qwen2.5, Llama, Gemma).                                                                                                                                                                  |
+| 🔀 **Decision-Making Focus** | Generates branching trajectories, constraint-aware scenarios, and negative examples for tool selection.                                                                                                                                                              |
+| 🧠 **Intelligent Routing**   | Dynamically routes pages to standard OCR or full-page VLM extraction based on layout significance.                                                                                                                                                                   |
+| 🛡️ **Fully Local & Private** | Requires zero cloud APIs. Optimized to run locally on consumer hardware (e.g., RTX 5060 8GB VRAM).                                                                                                                                                                   |
+| 👑 **Super User Agent**      | The integrated AI agent operates with OS-level super user (root) access for unconstrained pipeline management. Agentic systems, tool calls, and pipelines will be created with LangGraph, LangChain, etc., and safely integrated into the OS with strict guardrails. |
 
 ## 🏗️ Architecture
 

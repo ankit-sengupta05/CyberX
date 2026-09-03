@@ -28,4 +28,4 @@ The Cybersecurity Dataset Factory must strictly adhere to the following constrai
 
 ## 👑 5. Agent Permissions
 
-- **Super User Access**: The AI agent integrated into the operating system is granted full super user (root) access. This allows it to seamlessly manage files, execute system commands, and orchestrate the pipeline without permission bottlenecks.
+- **Super User Access**: The AI agent integrated into the operating system is granted full super user (root) access. This allows it to seamlessly manage files, execute system commands, and orchestrate the pipeline without permission bottlenecks. The agent runs natively within the custom **Kali Linux (latest)** base OS (which features a customized boot screen and UI/UX), executing agentic tool calls via LangGraph/LangChain bounded by strict OS guardrails.

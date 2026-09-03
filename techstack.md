@@ -4,11 +4,12 @@ Based on the ColPali-Core Cybersecurity Dataset Factory PRD, the system leverage
 
 ## 🧠 AI & Machine Learning Models
 
-| Component                 | Technology                                  | Purpose                                                       |
-| ------------------------- | ------------------------------------------- | ------------------------------------------------------------- |
-| **Visual Indexing**       | **ColPali** / **ColQwen2**                  | Multi-vector visual embeddings preserving page layout.        |
-| **Generation / LLM**      | **Qwen2.5** (Primary), **Llama**, **Gemma** | Scenario generation, trajectory building, and tool selection. |
-| **Vision Language Model** | **Qwen2.5-VL**                              | Full-page VLM extraction for high-layout-significance pages.  |
+| Component                 | Technology                                  | Purpose                                                                                                |
+| ------------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| **Visual Indexing**       | **ColPali** / **ColQwen2**                  | Multi-vector visual embeddings preserving page layout.                                                 |
+| **Generation / LLM**      | **Qwen2.5** (Primary), **Llama**, **Gemma** | Scenario generation, trajectory building, and tool selection.                                          |
+| **Vision Language Model** | **Qwen2.5-VL**                              | Full-page VLM extraction for high-layout-significance pages.                                           |
+| **Agentic Frameworks**    | **LangGraph**, **LangChain**, etc.          | Creation of agentic systems, tool calls, and pipelines, integrated into the OS with strict guardrails. |
 
 ## 🗄️ Database & Storage
 
@@ -19,19 +20,19 @@ Based on the ColPali-Core Cybersecurity Dataset Factory PRD, the system leverage
 
 ## ⚙️ Data Extraction & Processing
 
-| Component            | Technology             | Purpose                                           |
-| -------------------- | ---------------------- | ------------------------------------------------- |
-| **Document Parsing** | **Docling**, local OCR | Text, table, equation, and code block extraction. |
-| **Image Processing** | **Pillow**, **OpenCV** | Rendering PDFs/EPUBs to 200 DPI base images.      |
+| Component            | Technology                           | Purpose                                           |
+| -------------------- | ------------------------------------ | ------------------------------------------------- |
+| **Document Parsing** | **Docling**, **Baidu Unlimited-OCR** | Text, table, equation, and code block extraction. |
+| **Image Processing** | **Pillow**, **OpenCV**               | Rendering PDFs/EPUBs to 200 DPI base images.      |
 
 ## 🖥️ Hardware & Execution
 
-| Component       | Specification              | Details                                                            |
-| --------------- | -------------------------- | ------------------------------------------------------------------ |
-| **GPU**         | NVIDIA RTX 5060 (8GB VRAM) | Primary inference device. Strict model loading/unloading required. |
-| **CPU**         | Intel i7-14700HX           | Used for fallback operations (OCR, preprocessing).                 |
-| **OS**          | Windows / Linux            | Fully local environment with no cloud dependencies.                |
-| **Permissions** | Super User / Root          | The integrated OS agent runs with full super user privileges.      |
+| Component       | Specification              | Details                                                                                                                                                                                                      |
+| --------------- | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **GPU**         | NVIDIA RTX 5060 (8GB VRAM) | Primary inference device. Strict model loading/unloading required.                                                                                                                                           |
+| **CPU**         | Intel i7-14700HX           | Used for fallback operations (OCR, preprocessing).                                                                                                                                                           |
+| **OS**          | Custom Kali Linux (Latest) | Base operating system, modified with a custom boot screen, refined UI/UX, and native AI OS integrations.                                                                                                     |
+| **Permissions** | Super User / Root          | The integrated OS agent runs with full super user privileges. Agentic systems, tool calls, and pipelines will be created with LangGraph, LangChain, etc., and integrated into the OS with strict guardrails. |
 
 ## 🛡️ Code Quality Pipeline
 

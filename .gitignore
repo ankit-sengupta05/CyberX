@@ -82,3 +82,6 @@ temp/
 *.tmp
 *.bak
 *.swp
+
+# Data models
+models/
