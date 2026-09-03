@@ -32,7 +32,7 @@ def main():
             trust_remote_code=True,
         )
         print("[SUCCESS] Model loaded successfully.")
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001
         print(f"[ERROR] Failed to load the model: {e}")
         sys.exit(1)
 
@@ -90,7 +90,7 @@ def main():
         print(result_text)
         print("\n------------------\n")
 
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001
         print(f"[ERROR] Inference failed: {e}")
 
 
