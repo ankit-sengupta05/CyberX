@@ -17,6 +17,7 @@ To power the intelligence of this OS, the project includes a **fully local, auto
 4. A reusable **future-model adapter pipeline**.
 5. A high-quality **evaluation/benchmark dataset**.
 6. A **layout-aware visual retrieval index** (ColPali/ColQwen2), treated as core infrastructure rather than an optional add-on.
+7. An **Adaptive Companion AI Identity**: The OS uses Reinforcement Learning (RL) to learn user preferences and grow with interactions over time. It maintains a persistent companion identity whose "brain" (the underlying LLM) can be swapped (via API or raw local weights) to scale raw intelligence, without losing its personalized understanding of the user.
    The system must preserve the relationship between:
 
 > **Situation → Goal → Constraints → Evidence → Decision → Technique → Tool → Action → Observation → Interpretation → Next Decision**

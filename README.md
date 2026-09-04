@@ -43,6 +43,16 @@ All models run **100% locally** — zero cloud APIs required. Optimized for an N
 
 ---
 
+## 🤝 Adaptive Companion AI
+
+CyberHackerOS is designed to be more than just a tool—it acts as a **personalized cybersecurity companion**.
+
+- **Reinforcement Learning (RL) & Adaptation:** The system actively uses RL to learn from your interactions, adapt to your specific preferences, and grow alongside your workflows. It builds an understanding of your methodology over time.
+- **Persistent Identity:** Users can associate with the OS as a consistent companion. Your preferences, historical context, and customized workflows are retained as part of the companion's core memory.
+- **Decoupled Intelligence:** The "brain" is interchangeable. When you swap the underlying LLM (whether switching to a different local raw model or connecting to an external API), you are simply upgrading the companion's _raw intelligence and extent of capabilities_. The companion's identity and understanding of you remain intact, allowing it to leverage the new model's power without losing its personalized context.
+
+---
+
 ## 🛡️ Guardrails — Built Into the Core
 
 Every AI agent on CyberHackerOS operates with **strictly enforced guardrails** baked into the OS service layer:
