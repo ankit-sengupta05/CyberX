@@ -1,6 +1,6 @@
-# ⚠️ System Constraints & Design Principles
+# ⚠️ CyberHackerOS Constraints & Guardrails
 
-The Cybersecurity Dataset Factory must strictly adhere to the following constraints to ensure local execution, high-quality multimodal training data, and scalability.
+CyberHackerOS and its integrated Dataset Factory engine must strictly adhere to the following constraints to ensure secure local execution, strict AI guardrails, and optimal performance.
 
 ## 🖥️ 1. Strict Hardware Limitations (8GB VRAM Budget)
 
@@ -26,6 +26,8 @@ The Cybersecurity Dataset Factory must strictly adhere to the following constrai
 - **Deduplication**: Must prevent redundant training examples across editions/reprints. Deduplication requires exact hashing, semantic clustering, AND ColPali visual embeddings to catch layout near-duplicates.
 - **Decision Over Memorization**: The pipeline focuses on _decision-making and tool/technique selection_, not simple memorization of shell commands.
 
-## 👑 5. Agent Permissions
+## 👑 5. Agent Permissions & Guardrails
 
-- **Super User Access**: The AI agent integrated into the operating system is granted full super user (root) access. This allows it to seamlessly manage files, execute system commands, and orchestrate the pipeline without permission bottlenecks. The agent runs natively within the custom **Kali Linux (latest)** base OS (which features a customized boot screen and UI/UX), executing agentic tool calls via LangGraph/LangChain bounded by strict OS guardrails.
+- **Strict OS-Level Guardrails**: While the integrated AI agent runs natively within the custom **Kali Linux** base OS and can be granted root access, it operates under strict, non-negotiable guardrails.
+- **Sandboxed Tool Calling**: Agentic tool calls (via LangGraph/LangChain) execute inside sandboxed contexts that enforce network and filesystem boundaries.
+- **Human-in-the-Loop for Destructive Actions**: Destructive actions (e.g., file deletion, payload deployment) require explicit human confirmation. The system is designed strictly for authorized CTF labs, research, and systems the user has legal permission to test.

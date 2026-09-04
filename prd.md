@@ -1,4 +1,4 @@
-# Product Requirements Document — Cybersecurity Dataset Factory & Model-Agnostic Fine-Tuning Pipeline (ColPali-Core Edition)
+# Product Requirements Document — CyberHackerOS & Dataset Factory
 
 **Version:** 0.2 (ColPali integrated as a first-class ingestion component)
 **Status:** Draft
@@ -7,7 +7,9 @@
 
 ## 1. Product Overview
 
-Build a **fully local, automated cybersecurity knowledge and training-data factory** that ingests a large collection of cybersecurity, hacking, penetration-testing, networking, Linux, Windows, cloud-security, and related textbooks and transforms them into:
+Build **CyberHackerOS**, a custom **AI Operating System** based on the latest **Kali Linux**, featuring a modified boot screen, minor UI/UX refinements, and native integration of agentic tool calls as core OS services. The system features agentic systems, tool calls, and pipelines created with LangGraph, LangChain, etc., integrated into the OS with strict guardrails.
+
+To power the intelligence of this OS, the project includes a **fully local, automated cybersecurity knowledge and training-data factory** that ingests a large collection of cybersecurity, hacking, penetration-testing, networking, Linux, Windows, cloud-security, and related textbooks and transforms them into:
 
 1. A **master multimodal knowledge corpus**.
 2. A **model-agnostic cybersecurity decision dataset**.
@@ -15,10 +17,7 @@ Build a **fully local, automated cybersecurity knowledge and training-data facto
 4. A reusable **future-model adapter pipeline**.
 5. A high-quality **evaluation/benchmark dataset**.
 6. A **layout-aware visual retrieval index** (ColPali/ColQwen2), treated as core infrastructure rather than an optional add-on.
-7. **Agentic systems, tool calls, and pipelines** created with LangGraph, LangChain, etc., integrated into the OS with strict guardrails.
-8. A custom **AI Operating System** based on the latest **Kali Linux**, featuring a modified boot screen, minor UI/UX refinements, and native integration of agentic tool calls as core OS services.
-
-The system must preserve the relationship between:
+   The system must preserve the relationship between:
 
 > **Situation → Goal → Constraints → Evidence → Decision → Technique → Tool → Action → Observation → Interpretation → Next Decision**
 

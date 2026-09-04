@@ -1,6 +1,6 @@
-# 🛠️ Technology Stack
+# 🛠️ CyberHackerOS Technology Stack
 
-Based on the ColPali-Core Cybersecurity Dataset Factory PRD, the system leverages the following technologies to build a robust, privacy-first, multimodal knowledge extraction pipeline.
+CyberHackerOS is a custom AI-native operating system built on Kali Linux. It embeds LLMs directly into the OS core, utilizing the following technologies to power both its OS-level AI services and its integrated Cybersecurity Dataset Factory engine.
 
 ## 🧠 AI & Machine Learning Models
 
