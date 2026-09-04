@@ -18,6 +18,17 @@ EXCLUDED_DIRS = {
     "__pycache__",
     ".next",
     ".gradle",
+    # Large data / model directories — scanning these would hang on multi-GB files
+    "models",
+    "input",
+    "output",
+    "datasets",
+    "data",
+    "checkpoints",
+    "artifacts",
+    "cache",
+    ".cache",
+    "logs",
 }
 
 EXCLUDED_EXTENSIONS = {
