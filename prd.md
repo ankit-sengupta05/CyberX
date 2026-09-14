@@ -1,4 +1,4 @@
-# Product Requirements Document — CyberHackerOS & Dataset Factory
+# Product Requirements Document — CyberHacker Suite & Dataset Factory
 
 **Version:** 0.2 (ColPali integrated as a first-class ingestion component)
 **Status:** Draft
@@ -7,9 +7,9 @@
 
 ## 1. Product Overview
 
-Build **CyberHackerOS**, a custom **AI Operating System** based on the latest **Kali Linux**, featuring a modified boot screen, minor UI/UX refinements, and native integration of agentic tool calls as core OS services. The system features agentic systems, tool calls, and pipelines created with LangGraph, LangChain, etc., integrated into the OS with strict guardrails.
+Build the **CyberHacker Suite**, an **AI-Native Extension Suite** for **Kali Linux**, featuring native integration of agentic tool calls as system services. The system features agentic tools and pipelines created with LangGraph, LangChain, etc., integrated into the environment with strict guardrails.
 
-To power the intelligence of this OS, the project includes a **fully local, automated cybersecurity knowledge and training-data factory** that ingests a large collection of cybersecurity, hacking, penetration-testing, networking, Linux, Windows, cloud-security, and related textbooks and transforms them into:
+To power the intelligence of this suite, the project includes a **fully local, automated cybersecurity knowledge and training-data factory** that ingests a large collection of cybersecurity, hacking, penetration-testing, networking, Linux, Windows, cloud-security, and related textbooks and transforms them into:
 
 1. A **master multimodal knowledge corpus**.
 2. A **model-agnostic cybersecurity decision dataset**.
@@ -17,7 +17,7 @@ To power the intelligence of this OS, the project includes a **fully local, auto
 4. A reusable **future-model adapter pipeline**.
 5. A high-quality **evaluation/benchmark dataset**.
 6. A **layout-aware visual retrieval index** (ColPali/ColQwen2), treated as core infrastructure rather than an optional add-on.
-7. An **Adaptive Companion AI Identity**: The OS uses Reinforcement Learning (RL) to learn user preferences and grow with interactions over time. It maintains a persistent companion identity whose "brain" (the underlying LLM) can be swapped (via API or raw local weights) to scale raw intelligence, without losing its personalized understanding of the user.
+7. An **Adaptive Companion AI Identity**: The suite uses Reinforcement Learning (RL) to learn user preferences and grow with interactions over time. It maintains a persistent companion identity whose "brain" (the underlying LLM) can be swapped (via API or raw local weights) to scale raw intelligence, without losing its personalized understanding of the user.
    The system must preserve the relationship between:
 
 > **Situation → Goal → Constraints → Evidence → Decision → Technique → Tool → Action → Observation → Interpretation → Next Decision**

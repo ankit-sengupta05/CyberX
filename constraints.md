@@ -1,6 +1,6 @@
-# ⚠️ CyberHackerOS Constraints & Guardrails
+# ⚠️ CyberHacker Suite Constraints & Guardrails
 
-CyberHackerOS and its integrated Dataset Factory engine must strictly adhere to the following constraints to ensure secure local execution, strict AI guardrails, and optimal performance.
+The CyberHacker Suite and its integrated Dataset Factory engine must strictly adhere to the following constraints to ensure secure local execution, strict AI guardrails, and optimal performance.
 
 ## 🖥️ 1. Strict Hardware Limitations (8GB VRAM Budget)
 
@@ -28,6 +28,6 @@ CyberHackerOS and its integrated Dataset Factory engine must strictly adhere to 
 
 ## 👑 5. Agent Permissions & Guardrails
 
-- **Strict OS-Level Guardrails**: While the integrated AI agent runs natively within the custom **Kali Linux** base OS and can be granted root access, it operates under strict, non-negotiable guardrails.
+- **Strict Environment Guardrails**: While the integrated AI agent runs natively within any standard **Kali Linux** base and can be granted root access to perform tasks, it operates under strict, non-negotiable guardrails.
 - **Sandboxed Tool Calling**: Agentic tool calls (via LangGraph/LangChain) execute inside sandboxed contexts that enforce network and filesystem boundaries.
 - **Human-in-the-Loop for Destructive Actions**: Destructive actions (e.g., file deletion, payload deployment) require explicit human confirmation. The system is designed strictly for authorized CTF labs, research, and systems the user has legal permission to test.

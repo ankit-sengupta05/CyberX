@@ -1,8 +1,8 @@
 <div align="center">
 
-# ☠️ CyberHackerOS
+# ☠️ CyberHacker Suite
 
-**An AI-Native Operating System — Kali Linux Core, Integrated with LLMs & Strict Guardrails**
+**An AI-Native Extension Suite for Kali Linux, Integrated with LLMs & Strict Guardrails**
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Base OS](https://img.shields.io/badge/Base%20OS-Kali%20Linux%20Rolling-557C94?logo=kalilinux&logoColor=white)](https://www.kali.org/)
@@ -15,9 +15,9 @@
 
 ---
 
-## 📖 What is CyberHackerOS?
+## 📖 What is the CyberHacker Suite?
 
-**CyberHackerOS** is a custom AI-native operating system built directly on top of the latest **Kali Linux Rolling** release. It is not a standard Kali distro with tools bolted on. It is a deeply integrated platform where **Large Language Models (LLMs)** and **agentic AI pipelines** are first-class citizens of the OS itself — not applications running on top of it.
+**CyberHacker** is a custom AI-native extension suite that integrates directly into any existing **Kali Linux** environment. It is not a custom OS image or a standalone distribution. Instead, it is a deeply integrated platform where **Large Language Models (LLMs)** and **agentic AI pipelines** act as first-class citizens alongside your existing Kali tools.
 
 LLMs and vision-language models are integrated into the Kali Linux core and exposed as native OS services. Every AI agent that has access to OS-level capabilities operates under **strict, non-negotiable guardrails** — preventing unauthorized actions, data exfiltration, and destructive commands unless explicitly permitted in a controlled, authorized lab environment.
 
@@ -27,7 +27,7 @@ LLMs and vision-language models are integrated into the Kali Linux core and expo
 
 ## 🧠 LLM & AI Integration
 
-CyberHackerOS embeds AI at the OS level through the following stack:
+CyberHacker embeds AI into your system through the following stack:
 
 | Layer                 | Technology               | Role                                                   |
 | :-------------------- | :----------------------- | :----------------------------------------------------- |
@@ -45,17 +45,17 @@ All models run **100% locally** — zero cloud APIs required. Optimized for an N
 
 ## 🤝 Adaptive Companion AI
 
-CyberHackerOS is designed to be more than just a tool—it acts as a **personalized cybersecurity companion**.
+The CyberHacker suite is designed to be more than just a tool—it acts as a **personalized cybersecurity companion**.
 
 - **Reinforcement Learning (RL) & Adaptation:** The system actively uses RL to learn from your interactions, adapt to your specific preferences, and grow alongside your workflows. It builds an understanding of your methodology over time.
-- **Persistent Identity:** Users can associate with the OS as a consistent companion. Your preferences, historical context, and customized workflows are retained as part of the companion's core memory.
+- **Persistent Identity:** Users can associate with the suite as a consistent companion. Your preferences, historical context, and customized workflows are retained as part of the companion's core memory.
 - **Decoupled Intelligence:** The "brain" is interchangeable. When you swap the underlying LLM (whether switching to a different local raw model or connecting to an external API), you are simply upgrading the companion's _raw intelligence and extent of capabilities_. The companion's identity and understanding of you remain intact, allowing it to leverage the new model's power without losing its personalized context.
 
 ---
 
 ## 🛡️ Guardrails — Built Into the Core
 
-Every AI agent on CyberHackerOS operates with **strictly enforced guardrails** baked into the OS service layer:
+Every AI agent in the CyberHacker suite operates with **strictly enforced guardrails** baked into the service layer:
 
 - **Authorization checks** — Agents cannot execute against targets outside an explicitly declared scope.
 - **Non-destructive defaults** — Destructive actions (file deletion, payload deployment, privilege escalation) require explicit human confirmation even with root access.
@@ -67,7 +67,7 @@ Every AI agent on CyberHackerOS operates with **strictly enforced guardrails** b
 
 ## ⚙️ The Knowledge Engine — CyberX Dataset Factory
 
-The AI intelligence powering CyberHackerOS is trained on knowledge produced by the **CyberX Dataset Factory** — a fully local, automated pipeline that ingests cybersecurity textbooks and produces structured training data.
+The AI intelligence powering the CyberHacker suite is trained on knowledge produced by the **CyberX Dataset Factory** — a fully local, automated pipeline that ingests cybersecurity textbooks and produces structured training data.
 
 ### How it works
 
@@ -84,7 +84,7 @@ graph TD;
     H --> I[(Canonical Dataset)];
     I --> J[Qwen2.5 Fine-Tune Adapter];
     I --> K[Future LLM Adapter];
-    J --> L[🤖 CyberHackerOS AI Core];
+    J --> L[🤖 CyberHacker AI Core];
 ```
 
 Unlike standard RAG pipelines that flatten PDFs into linear text, the factory treats **every page as a visual object first**. This preserves the spatial relationships between diagrams, tables, callouts, and code blocks that plain text extraction destroys.
@@ -101,14 +101,13 @@ Unlike standard RAG pipelines that flatten PDFs into linear text, the factory tr
 
 ---
 
-## 🖥️ OS Customization
+## 🖥️ System Integration
 
-CyberHackerOS modifies the Kali Linux base at the ISO level:
+The CyberHacker suite integrates seamlessly with your Kali Linux base:
 
-- **Custom boot splash & GRUB menu** — Branded CyberHackerOS boot experience.
 - **Native agentic services** — LangGraph pipelines registered as `systemd` services, available from the first shell session.
-- **Modified UI/UX** — Tailored desktop environment tweaks for a focused security-research workflow.
-- **Pre-loaded tooling** — All required Kali tools and AI models configured out-of-the-box.
+- **Workflow Enhancements** — Integrates with your desktop environment for a focused security-research workflow.
+- **Tool Interoperability** — Works alongside and augments all standard Kali tools out-of-the-box.
 
 ---
 

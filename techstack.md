@@ -1,6 +1,6 @@
-# 🛠️ CyberHackerOS Technology Stack
+# 🛠️ CyberHacker Suite Technology Stack
 
-CyberHackerOS is a custom AI-native operating system built on Kali Linux. It embeds LLMs directly into the OS core, utilizing the following technologies to power both its OS-level AI services and its integrated Cybersecurity Dataset Factory engine.
+CyberHacker is a custom AI-native extension suite that integrates into Kali Linux. It embeds LLMs directly into the environment, utilizing the following technologies to power both its AI services and its integrated Cybersecurity Dataset Factory engine.
 
 ## 🧠 AI & Machine Learning Models
 
@@ -27,12 +27,12 @@ CyberHackerOS is a custom AI-native operating system built on Kali Linux. It emb
 
 ## 🖥️ Hardware & Execution
 
-| Component       | Specification              | Details                                                                                                                                                                                                      |
-| --------------- | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **GPU**         | NVIDIA RTX 5060 (8GB VRAM) | Primary inference device. Strict model loading/unloading required.                                                                                                                                           |
-| **CPU**         | Intel i7-14700HX           | Used for fallback operations (OCR, preprocessing).                                                                                                                                                           |
-| **OS**          | Custom Kali Linux (Latest) | Base operating system, modified with a custom boot screen, refined UI/UX, and native AI OS integrations.                                                                                                     |
-| **Permissions** | Super User / Root          | The integrated OS agent runs with full super user privileges. Agentic systems, tool calls, and pipelines will be created with LangGraph, LangChain, etc., and integrated into the OS with strict guardrails. |
+| Component       | Specification              | Details                                                                                                                                                                   |
+| --------------- | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **GPU**         | NVIDIA RTX 5060 (8GB VRAM) | Primary inference device. Strict model loading/unloading required.                                                                                                        |
+| **CPU**         | Intel i7-14700HX           | Used for fallback operations (OCR, preprocessing).                                                                                                                        |
+| **OS**          | Any standard Kali Linux    | Base operating system environment. CyberHacker runs as an integrated extension suite on top of it.                                                                        |
+| **Permissions** | Super User / Root          | The integrated AI agent can be granted super user privileges to manage files and execute commands. Agentic systems, tool calls, and pipelines run with strict guardrails. |
 
 ## 🛡️ Code Quality Pipeline
 
